@@ -1,0 +1,5 @@
+        <<if $NPCName[$NPCNameList.indexOf("Sydney")].love gte 10 and $daily.sydney.complaint isnot true and ($science_exam lte 0 or $maths_exam lte 0 or $history_exam lte 0 or $english_exam lte 0)>>
+				<<ind>><<link [[诉说学习上的困扰 (0:15)|Sydney Study Complaint]]>><<pass 15>><<npcincr Sydney love 1>><<stress -5>><</link>><<lstress>><<glove>>
+				<br>
+		<</if>>
+		<<if $promiscuity gte 55 and $sydneyromance is 1 and !$daily.sydney.crawl>>

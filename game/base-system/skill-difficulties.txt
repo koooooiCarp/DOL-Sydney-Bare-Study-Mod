@@ -1,0 +1,79 @@
+<<widget "sciencedifficulty">>
+	<<set _sciencedifficultymin to (_args[0] ? _args[0] : 1)>>
+	<<set _sciencedifficultymax to (_args[1] ? _args[1] : 1000)>>
+	<<if _sciencedifficultymin gte _sciencedifficultymax>>
+		<<set _sciencedifficultymax to _sciencedifficultymin + 1>>
+	<</if>>
+	<<set _science to currentSkillValue('science')>>
+	<<if _args[2] is undefined and $statdisable is "f">>
+		<<if $checkstyle is "skillname">>
+			| <span class="orange">科学</span>
+		<<else>>
+			| <span class="orange">科学</span>：
+			<<set _difficulty to Math.round(Math.clamp(_science - _sciencedifficultymin, 0, _sciencedifficultymax) / (_sciencedifficultymax - _sciencedifficultymin) * 100)>>
+			<<if _difficulty gt 100>>
+				<<set _difficulty to 100>>
+			<</if>>
+			<<skillDifficultyText _difficulty>>
+		<</if>>
+	<</if>>
+	<<if _science gte random(_sciencedifficultymin, _sciencedifficultymax)>>
+		<<set $scienceSuccess to 1>>
+	<<else>>
+		<<set $scienceSuccess to 0>>
+	<</if>>
+<</widget>>
+
+<<widget "historydifficulty">>
+	<<set _historydifficultymin to (_args[0] ? _args[0] : 1)>>
+	<<set _historydifficultymax to (_args[1] ? _args[1] : 1000)>>
+	<<if _historydifficultymin gte _historydifficultymax>>
+		<<set _historydifficultymax to _historydifficultymin + 1>>
+	<</if>>
+	<<set _history to currentSkillValue('history')>>
+	<<if _args[2] is undefined and $statdisable is "f">>
+		<<if $checkstyle is "skillname">>
+			| <span class="orange">历史</span>
+		<<else>>
+			| <span class="orange">历史</span>：
+			<<set _difficulty to Math.round(Math.clamp(_history - _historydifficultymin, 0, _historydifficultymax) / (_historydifficultymax - _historydifficultymin) * 100)>>
+			<<if _difficulty gt 100>>
+				<<set _difficulty to 100>>
+			<</if>>
+			<<skillDifficultyText _difficulty>>
+		<</if>>
+	<</if>>
+	<<if _history gte random(_historydifficultymin, _historydifficultymax)>>
+		<<set $historySuccess to 1>>
+	<<else>>
+		<<set $historySuccess to 0>>
+	<</if>>
+<</widget>>
+
+<<widget "mathsdifficulty">>
+	<<set _mathsdifficultymin to (_args[0] ? _args[0] : 1)>>
+	<<set _mathsdifficultymax to (_args[1] ? _args[1] : 1000)>>
+	<<if _mathsdifficultymin gte _mathsdifficultymax>>
+		<<set _mathsdifficultymax to _mathsdifficultymin + 1>>
+	<</if>>
+	<<set _maths to currentSkillValue('maths')>>
+	<<if _args[2] is undefined and $statdisable is "f">>
+		<<if $checkstyle is "skillname">>
+			| <span class="orange">数学</span>
+		<<else>>
+			| <span class="orange">数学</span>：
+			<<set _difficulty to Math.round(Math.clamp(_maths - _mathsdifficultymin, 0, _mathsdifficultymax) / (_mathsdifficultymax - _mathsdifficultymin) * 100)>>
+			<<if _difficulty gt 100>>
+				<<set _difficulty to 100>>
+			<</if>>
+			<<skillDifficultyText _difficulty>>
+		<</if>>
+	<</if>>
+	<<if _maths gte random(_mathsdifficultymin, _mathsdifficultymax)>>
+		<<set $mathsSuccess to 1>>
+	<<else>>
+		<<set $mathsSuccess to 0>>
+	<</if>>
+<</widget>>
+
+<<widget "englishdifficulty">>

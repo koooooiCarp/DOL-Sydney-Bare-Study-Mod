@@ -1,0 +1,5 @@
+        <<if $sydneyromance is 1 and $sydneySeen.includes("orphanage")>>
+		    <<homeicon>><<link [[去孤儿院学习|Sydney Bare Study Walk]]>><</link>>
+			<br>
+		<</if>>
+		<<if $sydneyromance is 1 and $sydneySeen.includes("corruptroom")>>

@@ -1,0 +1,13 @@
+:: Sydney Bare Study Mod Open
+<<effects>>
+	你靠近水晶球。<br><br>
+	<span class="gold">“悉尼双人学习mod的特殊选项开启需求：任何一科进度为负数、且暴露癖达到4级。为了方便地进行测试，每当你点击这个选项，学科进度都会往下直落。”</span>
+	<br><br>
+	你感到知识从你的脑中流走了……
+	<<lscience>><<set $science_exam -= 10>>
+	<<lmaths>><<set $maths_exam -= 10>>
+	<<lenglish>><<set $english_exam -= 10>>
+	<<lhistory>><<set $history_exam -= 10>>
+	<br><br>
+	<<link [[继续|Bedroom]]>><<endevent>><</link>>
+<br>

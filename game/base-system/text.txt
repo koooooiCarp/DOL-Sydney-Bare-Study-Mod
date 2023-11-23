@@ -1,0 +1,19 @@
+<<widget "lfocus">>
+	<<if $statdisable is "f">> |
+		<span class="purple">- 悉尼的专注</span>
+	<</if>>
+<</widget>>
+
+<<widget "llfocus">>
+	<<if $statdisable is "f">> |
+		<span class="purple">-- 悉尼的专注</span>
+	<</if>>
+<</widget>>
+
+<<widget "lllfocus">>
+	<<if $statdisable is "f">> |
+		<span class="purple">--- 悉尼的专注</span>
+	<</if>>
+<</widget>>
+
+<<widget "ldaring">>

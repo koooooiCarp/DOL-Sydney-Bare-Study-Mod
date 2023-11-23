@@ -1,0 +1,8 @@
+/* SBS */
+<<if !$sydneySeen.includes("orphanage")>>
+你看到一个神秘的水晶球放在房间的角落里。
+<br>
+<<ind>><<link [[一键开启双人学习mod剧情|Sydney Bare Study Mod Open]]>><</link>>
+<br><br>
+<</if>>
+/* Bed */

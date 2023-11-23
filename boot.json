@@ -1,0 +1,56 @@
+{
+  "name": "Sydney Bare Study Mod",
+  "version": "0.0.1",
+  "additionFile": [
+    "game/overworld-town/special-sydney/walk.txt",
+    "game/overworld-town/special-sydney/widgets.txt",
+    "game/base-system/text.txt",
+    "game/base-system/skill-difficulties.txt",
+    "game/overworld-town/loc-home/main.txt",
+    "readme.md"
+  ],
+  "tweeFileList": [
+    "game/overworld-town/special-sydney/sydney-study.twee",
+    "game/overworld-town/loc-home/Mod Open Port.twee"
+  ],
+  "addonPlugin": [
+    {
+      "modName": "TweeReplacer",
+      "addonName": "TweeReplacerAddon",
+      "modVersion": "1.0.0",
+      "params": [
+        {
+          "passage": "Sydney Walk",
+          "findString": "\t\t<<if $sydneyromance is 1 and $sydneySeen.includes(\"corruptroom\")>>",
+          "replaceFile": "game/overworld-town/special-sydney/walk.txt"
+        },
+        {
+          "passage": "Widgets Sydney",
+          "findString": "\t\t<<if $promiscuity gte 55 and $sydneyromance is 1 and !$daily.sydney.crawl>>",
+          "replaceFile": "game/overworld-town/special-sydney/widgets.txt"
+        },
+        {
+          "passage": "Widgets Difficulty",
+          "findString": "<<widget \"englishdifficulty\">>",
+          "replaceFile": "game/base-system/skill-difficulties.txt"
+        },
+        {
+          "passage": "Widgets Text",
+          "findString": "<<widget \"ldaring\">>",
+          "replaceFile": "game/base-system/text.txt"
+        },
+        {
+          "passage": "Bedroom",
+          "findString": "/* Bed */",
+          "replaceFile": "game/overworld-town/loc-home/main.txt"
+        }
+      ]
+    }
+  ],
+  "dependenceInfo": [
+    {
+      "modName": "TweeReplacer",
+      "version": ">=1.0.0"
+    }
+  ]
+}
